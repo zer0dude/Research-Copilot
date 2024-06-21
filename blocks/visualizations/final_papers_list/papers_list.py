@@ -10,4 +10,5 @@ def get_papers_list():
         with st.container(border=True):
             st.subheader('Bibliography')
             for paper in papers:
+                st.markdown(paper['citationStyles']['bibtex'])
                 st.write(paper['title'])

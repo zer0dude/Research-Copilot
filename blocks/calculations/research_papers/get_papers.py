@@ -11,4 +11,5 @@ def get_papers_topics(topics):
         papers.extend(papers_found)
         if i != len(topics) - 1:  # if it's not the last iteration
             time.sleep(1.01)
+    papers=list(set(papers))
     return papers
