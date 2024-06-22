@@ -15,11 +15,13 @@ except:
 def get_papers(query, result_limit=5):
     if not query:
         return None
+    
+    print(query)
 
     rsp = requests.get('https://api.semanticscholar.org/graph/v1/paper/search',
                         headers={'X-API-KEY': os.environ["S2_API_KEY"]},
-                        params={'query': query, 'limit': result_limit, 'fields': 'title,url,authors,abstract, citationStyles'})
-    #print(rsp.text)
+                        params={'query': query, 'limit': result_limit, 'fields': 'title,url,authors,abstract,citationStyles'})
+    print(rsp.text)
     rsp.raise_for_status()
     results = rsp.json()
     total = results["total"]
