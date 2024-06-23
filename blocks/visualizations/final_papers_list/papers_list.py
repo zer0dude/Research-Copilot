@@ -1,5 +1,5 @@
 import streamlit as st
-from blocks.calculations.research_papers.get_papers import get_papers_topics, convert_bibtex, bibtex_to_apa
+from blocks.calculations.research_papers.get_papers import get_papers_topics, bibtex_to_apa
 
 def get_papers_list():
     if 'relevant_topics' in st.session_state:

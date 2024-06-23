@@ -3,6 +3,7 @@ from agents.gemini_agent import gemini_agent
 
 def get_summary_all_papers():
     if 'papers' in st.session_state:
+        
         prompt = '''
             Provide a summary of all the papers in the list. In Markdown style:
         '''
