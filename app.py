@@ -9,7 +9,8 @@ from blocks.visualizations.chatbot.chat_cohere import chatbot_page
 st.set_page_config(layout="wide")
 
 def page_research():
-    st.title('Research Assistant!')
+    st.title('Hi!')
+    st.write("I'm your personal research assistant. I can help you find relevant papers on a topic of your choice. I'll also provide you with summaries of those papers and allow you to communicate with your papers. Just type in a few keywords and I'll do the rest!")
     get_text_input()
     
     
