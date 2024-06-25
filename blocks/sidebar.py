@@ -5,10 +5,10 @@ def get_sidebar():
         st.subheader('Model Selection')
         col1, col2 = st.columns(2)
         with col1:
-            st.button('Model 1')
+            st.button('Gemini 1.5 Flash')
         with col2:
-            st.button('Model 2')
+            st.button('GPT-4o')
         
-        source = st.radio('Sources', ['Source 1', 'Source 2', 'Source 3', 'Source 4'])
+        source = st.radio('Sources', ['Semantic Scholar', 'arXiv', 'Elsevier', 'IEEE Xplore'])
         
     
