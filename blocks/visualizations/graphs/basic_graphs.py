@@ -78,7 +78,7 @@ def get_basic_graphs():
             authors, counts = zip(*author_counts.items())  # Unzip the items into two lists
             
             # Calculate dynamic figure height: 0.5 inches per author
-            figure_height = max(10, len(authors) * 0.5)  # Ensure a minimum height of 10 inches
+            figure_height = max(10, len(authors) * 0.1)  # Ensure a minimum height of 10 inches
 
             plt.figure(figsize=(10, figure_height))  # Dynamically set the figure size
             plt.barh(authors, counts, color='skyblue', edgecolor='black')
