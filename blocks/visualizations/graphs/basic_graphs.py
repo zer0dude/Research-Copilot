@@ -77,15 +77,17 @@ def get_basic_graphs():
             author_counts = Counter(author_names)
             authors, counts = zip(*author_counts.items())  # Unzip the items into two lists
             
-            # Create a vertical histogram using Matplotlib for authors
-            plt.figure(figsize=(10, 20))  # Set the figure size
+            # Calculate dynamic figure height: 0.5 inches per author
+            figure_height = max(10, len(authors) * 0.5)  # Ensure a minimum height of 10 inches
+
+            plt.figure(figsize=(10, figure_height))  # Dynamically set the figure size
             plt.barh(authors, counts, color='skyblue', edgecolor='black')
             plt.title("Histogram of Papers by Authors")
-            plt.xlabel("Author")
-            plt.ylabel("Number of Papers")
+            plt.xlabel("Number of Papers")
+            plt.ylabel("Author")
             plt.xticks(rotation=90)  # Rotate the x-axis labels to prevent overlap
             plt.tight_layout()  # Adjust the layout to make room for the labels
-            
+
             # Display the histogram in Streamlit
             st.pyplot(plt)
 
