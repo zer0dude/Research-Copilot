@@ -4,9 +4,13 @@ from blocks.text_input import get_text_input
 from blocks.visualizations.relevant_topics.topics import get_relevant_topics
 from blocks.visualizations.final_papers_list.papers_list import get_papers_list
 from blocks.visualizations.final_papers_list.summary_papers import get_summary_all_papers
+from blocks.visualizations.graphs.basic_graphs import get_basic_graphs
+from blocks.visualizations.graphs.wordcloud import get_wordcloud
+from blocks.visualizations.graphs.network_graphs import get_network_graphs
 from blocks.visualizations.chatbot.chat_cohere import chatbot_page
 
 st.set_page_config(layout="wide")
+
 
 def page_research():
     st.title('Hi!')
@@ -21,6 +25,10 @@ def page_research():
         get_papers_list()
     
     get_summary_all_papers()
+    get_basic_graphs()
+    get_wordcloud()
+    get_network_graphs()
+
 
 
 
@@ -31,7 +39,7 @@ def main():
 
     pg = st.navigation([st.Page(page_research, title='Find Papers'), st.Page(chatbot_page, title='ChatBot')])
     pg.run()
-    
+
 
 if __name__ == "__main__":
     main()

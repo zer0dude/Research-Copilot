@@ -12,7 +12,7 @@ except:
 
 
 
-def get_papers(query, result_limit=5):
+def get_papers(query, result_limit=20):
     if not query:
         return None
     
@@ -20,7 +20,7 @@ def get_papers(query, result_limit=5):
 
     rsp = requests.get('https://api.semanticscholar.org/graph/v1/paper/search',
                         headers={'X-API-KEY': os.environ["S2_API_KEY"]},
-                        params={'query': query, 'limit': result_limit, 'fields': 'title,url,authors,abstract,citationStyles,openAccessPdf'})
+                        params={'query': query, 'limit': result_limit, 'fields': 'title,url,authors,abstract,citationStyles,openAccessPdf,citations'})
     #print(rsp.text)
     rsp.raise_for_status()
     results = rsp.json()
