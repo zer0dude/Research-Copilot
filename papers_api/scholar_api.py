@@ -12,7 +12,7 @@ except:
 
 
 
-def get_papers(query, result_limit=20):
+def get_papers(query, result_limit=10):
     if not query:
         return None
     
