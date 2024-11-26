@@ -1,6 +1,8 @@
 import streamlit as st
 from pyvis.network import Network
 from blocks.calculations.research_papers.get_papers import get_papers_topics
+import random
+import numpy as np
 
 def get_network_graphs():
     if 'relevant_topics' in st.session_state:
@@ -19,19 +21,22 @@ def get_network_graphs():
             # Initialize the network graph
             net = Network(height="750px", width="100%", bgcolor="#222222", font_color="white")
 
-            # Add nodes and edges
+            # Add nodes
             for paper in papers:
                 paper_id = paper['paperId']
                 paper_title = paper.get('title', 'No Title')
                 net.add_node(paper_id, label=paper_title, title=paper_title)
-                # Iterate through citations if they exist
-                for citation in paper.get('citations', []):
-                    cited_paper_id = citation.get('paperId')
-                    # Ensure both the citing and cited papers are in the dataset and have been added as nodes
-                    if cited_paper_id in [p['paperId'] for p in papers]:
-                        # Check if both nodes exist in the network before adding an edge
-                        if paper_id in net.get_nodes() and cited_paper_id in net.get_nodes():
-                            net.add_edge(paper_id, cited_paper_id, color='lightblue')
+
+            # Add random edges
+            paper_ids = [paper['paperId'] for paper in papers]
+            for paper in papers:
+                paper_id = paper['paperId']
+                num_connections = int(np.random.normal(loc=3, scale=3))  # Normal distribution with mean=10, std=5
+                num_connections = max(1, min(num_connections, 10))  # Ensure the number of connections is between 1 and 20
+                targets = random.sample(paper_ids, num_connections)
+                for target_id in targets:
+                    if paper_id != target_id:  # Avoid self-loops
+                        net.add_edge(paper_id, target_id, color='lightblue')
 
             # Generate the network HTML directly
             network_html = net.generate_html()

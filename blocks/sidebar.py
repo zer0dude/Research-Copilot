@@ -3,12 +3,46 @@ import streamlit as st
 def get_sidebar():
     with st.sidebar:
         st.subheader('Model Selection')
-        col1, col2 = st.columns(2)
-        with col1:
-            st.button('Gemini 1.5 Flash')
-        with col2:
-            st.button('GPT-4o')
         
-        source = st.radio('Sources', ['Semantic Scholar', 'arXiv', 'Elsevier', 'IEEE Xplore'])
+        # 3rd Party Models
+        st.markdown("### 3rd Party Models")
+        third_party_models = []
+        if st.checkbox('GPT-4o', value=True):
+            third_party_models.append('GPT-4o')
+        if st.checkbox('Gemini 1.5 Flash'):
+            third_party_models.append('Gemini 1.5 Flash')
+        if st.checkbox('Claude'):
+            third_party_models.append('Claude')
         
-    
+        # OctoMind Models
+        st.markdown("### OctoMind Models")
+        octomind_models = []
+        if st.checkbox('Octo 1'):
+            octomind_models.append('Octo 1')
+        
+        # Local Models
+        st.markdown("### Local Models")
+        local_models = []
+        if st.checkbox('Local Reef 1.2'):
+            local_models.append('Local Reef 1.2')
+        
+        # Sources
+        st.markdown("### Sources")
+        sources = []
+        if st.checkbox('Semantic Scholar', value=True):
+            sources.append('Semantic Scholar')
+        if st.checkbox('arXiv'):
+            sources.append('arXiv')
+        if st.checkbox('Elsevier'):
+            sources.append('Elsevier')
+        if st.checkbox('IEEE Xplore'):
+            sources.append('IEEE Xplore')
+        if st.checkbox('Local Data'):
+            sources.append('Local Data')
+        if st.checkbox('Research Data Closed Network'):
+            sources.append('Research Data Closed Network')
+        
+        # Button to connect further local sources
+        st.markdown("### Connect further local Sources!")
+        if st.button("Add Source"):
+            pass  # Button does not need to do anything

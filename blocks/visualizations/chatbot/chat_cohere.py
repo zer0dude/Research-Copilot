@@ -2,7 +2,7 @@ import streamlit as st
 from blocks.calculations.rag_papers.get_pdf import rag_chat, read_pdfs_from_urls
 
 def chatbot_page():
-    st.title("Chat with the Papers")
+    st.title("Chat with your Sources! What would you like to know? 🐙")
     
     #print(st.session_state['folder'])
     if 'chat_history' not in st.session_state:
