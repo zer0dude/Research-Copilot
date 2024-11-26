@@ -13,8 +13,15 @@ st.set_page_config(layout="wide")
 
 
 def page_research():
-    st.title('Hi!')
-    st.write("I'm your personal research assistant. I can help you find relevant papers on a topic of your choice. I'll also provide you with summaries of those papers and allow you to communicate with your papers. Just type in a few keywords and I'll do the rest!")
+    # Display brand name or logo
+    col1, col2 = st.columns([0.1, 0.9])
+    with col1:
+        st.image("media/path/to/your/logo.png", width=50)  # Replace with the path to your logo image
+    with col2:
+        st.markdown("<h1 style='text-align: left;'>OctoMind</h1>", unsafe_allow_html=True)
+
+    st.title('Hi! I am Octo 🐙, your personal research assistant!')
+    st.write("I can help you understand any research topic and find relevant papers that may interest you! I'll also provide you with summaries of those papers and allow you to communicate with your papers. Just type in a few keywords and I'll do the rest!")
     get_text_input()
     
     
