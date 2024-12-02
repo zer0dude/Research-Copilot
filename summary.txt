@@ -1,0 +1,88 @@
+## Summary of Papers on Remote Work and Related Topics
+
+This document summarizes a collection of papers exploring various aspects of remote work, its impact on productivity, work-life balance, and organizational strategies.  Several papers also examine related issues such as the influence of built environment, IT infrastructure, and generational differences.
+
+**1. Overall Job Performance, Remote Work Engagement, Living With Children, and Remote Work Productivity During the COVID-19 Pandemic:** This study in Italy examined the relationship between overall job performance and remote work productivity, mediated by remote work engagement.  It found a significant relationship, moderated by whether employees lived with children under 18, with opposing effects depending on the specific relationship analyzed.  The authors recommend HR policies that consider employees' individual circumstances.
+
+**2. Effects of the residential built environment on remote work productivity and satisfaction during COVID-19 lockdowns: An analysis of workers’ perceptions:**  Abstract not provided.
+
+**3. Sharing Work Appearance for Improvement in Remote Work Productivity:** This study hypothesized that sharing work status among coworkers could improve productivity and reduce discomfort from monitoring.  A user study confirmed that sharing work status increased the actual work-time ratio and reduced discomfort compared to a monitored state.
+
+**4. Electrical Infrastructure and Remote Work Productivity after Post-Pandemic Productivity:** This study examined the relationship between reliable electrical infrastructure and remote worker productivity.  Analysis of data from five regions in two different time periods showed a correlation between infrastructure reliability and productivity levels.
+
+**5. HR strategies for sustaining remote-work productivity across generations:** Abstract not provided.
+
+**6. The Role of IT Infrastructure in Enabling Remote Work: Productivity and Employee Satisfaction:** This study in Pakistan investigated the impact of paternalistic leadership and organizational citizenship behavior on the effectiveness of higher education institutions. It found a significant positive relationship between all three.
+
+**7. A Survey of Perceptions of Remote Work and Work Productivity in the United States during the COVID-19 Shutdown:** This study surveyed US workers' perceptions of their own and their subordinates' productivity during the COVID-19 shutdown. It found improved productivity perceptions, positively related to pre-pandemic remote work experience.  Preference for future remote work was also positively linked to perceived productivity improvement.  The authors highlight the need for organizations to consider demographic, job-related, and supervisory factors when designing remote work arrangements.
+
+**8. Productivity dynamics of remote work during the COVID‐19 pandemic:** This study in Japan showed that while mean productivity at home improved, it remained lower than in-office productivity. Selection and learning effects contributed to the productivity growth.  Despite lower productivity, a significant portion of employees desired continued frequent remote work.
+
+**9. Remote Work Implications on Productivity of Workers in the Saudi Financial Sector:** This study investigated the impact of remote work on worker productivity in Saudi Arabia's financial sector. It found a positive correlation between remote work, job satisfaction, work management, and productivity.  The authors highlight both the benefits (increased responsibility, work-life balance) and drawbacks (isolation, communication challenges) of remote work.
+
+**10. Understanding Productivity Shifts in the Context of Remote Work:** This paper discusses the impact of remote work on employee productivity, weighing advantages and challenges and highlighting the need for adaptive strategies in a distributed workforce.
+
+**11. The value of extended short-term medical training placements in smaller rural and remote locations on future work location: a cohort study:** This study found that extended short-term medical training placements in rural areas significantly increased the likelihood of graduates working in rural or regional locations post-graduation.  The effect was stronger when combined with longer-term regional training.
+
+**12. Short-Term vs. Long-Term Effects of Understory Removal on Nitrogen and Mobile Carbohydrates in Overstory Trees:** This study examined the effects of understory removal on nitrogen and carbohydrate levels in overstory trees in southwestern China.  It found that understory removal led to higher nitrogen and carbohydrate concentrations, especially during the dry season.
+
+**13. The Role of Conditional Cash Transfers in Reducing Spousal Abuse in Mexico: Short-Term vs. Long-Term Effects:** This study examined the long-term effects of a conditional cash transfer program on spousal violence in Mexico.  It found that while short-term effects showed a reduction in abuse, long-term effects were not statistically significant.
+
+**14. Long-term effects of chronic stress models in adult mice:** Abstract not provided.
+
+**15. Short‐ and long‐term effects of body weight loss following calorie restriction and gastric bypass on CYP3A‐activity – a non‐randomized three‐armed controlled trial:** This study compared the short-term and long-term effects of gastric bypass surgery and calorie restriction on CYP3A activity.  It found similar short-term effects but different long-term effects on midazolam bioavailability, suggesting that weight loss alone doesn't fully explain the changes.
+
+**16. Plasma surface modification of polyethylene: short-term vs. long-term plasma treatment:** This study compared short-term and long-term plasma treatment effects on polyethylene surfaces. It found that both treatments formed hydroxyl, carbonyl, and carboxyl groups, with intensities increasing with treatment time.
+
+**17. Long-Term Effects of Fire Severity and Climatic Factors on Post-Forest-Fire Vegetation Recovery:** This study analyzed long-term post-fire vegetation recovery in China using remote sensing data. It found that recovery took 7-10 years, with high-severity areas recovering fastest initially. Temperature and precipitation were identified as key driving factors.
+
+**18. ‘We just did it as a team’: Learning and working on a paediatric interprofessional training ward improves interprofessional competencies in the short- and in the long-term:** This study evaluated the short- and long-term effects of an interprofessional training ward on pediatric trainees' competencies. It found positive short-term and some persistent long-term improvements in interprofessional skills.
+
+**19. Short Term vs Long Term Dexamethasone Treatment: Effects on Rat Diaphragm Structure and Function:** Abstract not provided.
+
+**20. Time-dependent effects of climate and drought on tree growth in a Neotropical dry forest: Short-term tolerance vs. long-term sensitivity:** Abstract not provided.
+
+**21. Specializing in Cities: Density and the Pattern of Trade:** This study examined the relationship between urban density and trade patterns across countries. It found that countries with denser populations disproportionately export from density-loving sectors, particularly those reliant on R&D and collaborative tasks.
+
+**22. Remote work and work-life balance: Lessons learned from the covid-19 pandemic and suggestions for HRD practitioners:** This review of empirical studies examined work-life balance during the pandemic.  It identified mismatches between expectations and realities of remote work (flexibility vs. intensity, space limitations, technostress, increased housework) and suggested HR roles in addressing these issues.
+
+
+**23. Comparative Analysis of Work-Life Balance in Traditional Employment vs. Gig Economy under Remote Work Conditions in Latur City:** This study compared work-life balance experiences of traditional and gig workers in Latur City, India, finding differing experiences with gig workers reporting more freedom but also blurred work-life boundaries.  It emphasized the need for tailored support based on employment type and regional context.
+
+**24. A Rapid Implementation of Remote Work as a Strategy in Response to COVID-19: An Examination in Terms of Work-Life Balance:** Abstract not provided.
+
+**25. Investigating the Impact of Remote Working on Employee Productivity and Work-life Balance: A Study on the Business Consultancy Industry in Dubai, UAE:** This study in Dubai's business consultancy industry found a strong positive relationship between remote work and employee productivity but no significant impact on work-life balance.  It emphasized the shared responsibility of employers and employees for well-being in remote work settings.
+
+**26. Assessing the Growth of Remote Working and its Consequences for Effort, Well‐Being and Work‐Life Balance:** This paper challenges the assumption that remote work is a win-win situation. While it found positive associations with organizational commitment, job satisfaction, and well-being, it also noted increased work intensification and difficulty switching off.
+
+**27. Work-life Balance Under Conditions of Changes in the Quality of Working Life:** This study analyzed the impact of the COVID-19 pandemic and forced remote work on work-life balance.  It examined the changes in work-life balance for different employee groups due to alterations in working life quality.
+
+**28. “New normal” at work in a post-COVID world: work–life balance and labor markets:** This paper explores the "new normal" in work arrangements post-pandemic, differentiating between acceleration, normalization, and remodeling of pre-pandemic trends. It discusses the impact on work-life balance across manual and non-manual labor sectors.
+
+**29. WORK-LIFE BALANCE PROGRAMS IN THE ORGANIZATION:** This paper analyzes theoretical and methodological bases for developing and implementing work-life balance programs, highlighting their importance in addressing challenges of remote and hybrid work in Ukraine.  It provides examples of such programs and their impact.
+
+**30. Remote Work, Work Stress, and Work–Life during Pandemic Times: A Latin America Situation:** This study in Latin America showed that remote work during the pandemic increased perceived stress, reduced work-life balance and satisfaction, but increased productivity and engagement.  It found a moderating effect of stress on productivity, differing by gender.
+
+**31. Should I Stay or Should I Go (to the Office)?—Effects of Working from Home, Autonomy, and Core Self–Evaluations on Leader Health and Work–Life Balance:** This study investigated the impact of remote work, autonomy, and core self-evaluations on leaders' health and work-life balance. It found that leaders with lower core self-evaluations benefited more from remote work, while those with high resources had better outcomes regardless of work location.
+
+**32. Employee Engagement in the Era of Remote Work: Strategies for Innovation and Productivity:** This qualitative study identified communication practices, work-life balance, and employee support as key factors for enhancing employee engagement and productivity in remote work settings.
+
+**33. Organizational Strategies for Building Community Among Remote Adjunct Faculty:** This case study explores perceptions of program directors and adjunct faculty regarding strategies for building community among remote adjunct faculty, suggesting resource allocation and relationship-building as key factors.
+
+**34. Remote Work in a Changing World: A Nod to Personal Space, Self-Regulation and Other Health and Wellness Strategies:** This commentary provides recommendations for making remote work healthier and more satisfying, focusing on personal space, ergonomics, and self-regulation skills.
+
+
+**35. THE IMPACT OF REMOTE WORK ON HR PRACTICES: NAVIGATING CHALLENGES, EMBRACING OPPORTUNITIES:** This paper examines the significant impact of remote work on HR practices, highlighting both the challenges (employee engagement, performance management, collaboration) and opportunities (flexibility, global talent pool).  It emphasizes the need for HR adaptation and new strategies.
+
+**36. Remote Work and Changes in Organizational HR Practices During Corona Pandemic: A Study from Bangladesh:**  This qualitative study in Bangladesh explores the changes in organizational HR practices during the pandemic, focusing on the use of online tools, remote work, and the impact on work culture and policies.
+
+
+**37. Adapting HR Practices for Remote Work: Lessons from the Post-Pandemic Era, Case Study at Uniska MAB Banjarmasin:** This case study at a university in Indonesia explores the adaptation of HR practices to support remote work, highlighting successful strategies and lessons learned.
+
+**38. Remuneration strategies related to Charles Handy s cultural typology: a case study in a small digital market business in remote work:** This case study examines remuneration strategies in a small digital marketing business during the pandemic, proposing adjustments to better suit remote work arrangements and organizational culture.
+
+**39. Psychosocial, clinical, and organizational perspectives of the risks of remote work for employees` mental health:** This study analyzes the risks of remote work on employee mental health from psychosocial, clinical, and organizational perspectives, highlighting the need for preventive measures and support systems.
+
+**40. Remote work in the oil and gas sector: An organizational culture perspective:** This review paper examines the impact of remote work on organizational culture in the oil and gas sector, exploring challenges and opportunities for managing the transition and maintaining a cohesive culture.
+
+**41. Frontline healthcare workers experiences and challenges with in-person and remote work during the COVID-19 pandemic: A qualitative study:** This qualitative study explores the experiences and challenges faced by frontline healthcare workers during the COVID-19 pandemic, highlighting stressors, coping strategies, organizational support, and recommendations for improvement.

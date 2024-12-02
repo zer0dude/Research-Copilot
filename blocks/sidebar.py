@@ -38,11 +38,11 @@ def get_sidebar():
         if st.checkbox('IEEE Xplore'):
             sources.append('IEEE Xplore')
         if st.checkbox('Local Data'):
-            sources.append('Local Data')
-        if st.checkbox('Research Data Closed Network'):
-            sources.append('Research Data Closed Network')
+            sources.append('Local Data: Internal Report and Data on Remote Work')
+        if st.checkbox('Think Tank Internal Database'):
+            sources.append('Think Tank Internal Database')
         
-        # Button to connect further local sources
-        st.markdown("### Connect further local Sources!")
+        # Button to connect further sources
+        st.markdown("### Connect further Sources!")
         if st.button("Add Source"):
             pass  # Button does not need to do anything

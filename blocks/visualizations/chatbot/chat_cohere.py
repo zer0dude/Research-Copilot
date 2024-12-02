@@ -10,21 +10,24 @@ def chatbot_page():
     if 'citations' not in st.session_state:
         st.session_state['citations'] = []
 
-    if 'text_papers' not in st.session_state:
-        try:
-            print('finding papers')
-            st.session_state['text_papers'] = read_pdfs_from_urls(st.session_state['papers'])
-        except:
-            st.session_state['text_papers']=None
-            st.write("Papers not found")
+    # if 'text_papers' not in st.session_state:
+    #     try:
+    #         print('finding papers')
+    #         st.session_state['text_papers'] = read_pdfs_from_urls(st.session_state['papers'])
+    #     except:
+    #         st.session_state['text_papers']=None
+    #         st.write("Papers not found")
     
-    if st.session_state['text_papers'] is None:
-        try:
-            print('finding papers')
-            st.session_state['text_papers'] = read_pdfs_from_urls(st.session_state['papers'])
-        except:
-            st.session_state['text_papers']=None
-            st.write("Papers not found")
+    # if st.session_state['text_papers'] is None:
+    #     try:
+    #         print('finding papers')
+    #         st.session_state['text_papers'] = read_pdfs_from_urls(st.session_state['papers'])
+    #     except:
+    #         st.session_state['text_papers']=None
+    #         st.write("Papers not found")
+
+    if 'text_papers' not in st.session_state:
+        st.session_state['text_papers'] = None
 
     #print(st.session_state[st.session_state['folder']])
     # Display chat messages from history on app rerun
@@ -38,7 +41,7 @@ def chatbot_page():
                     st.write(st.session_state['citations'][i])
 
     # React to user input
-    if prompt := st.chat_input("What is up?"):
+    if prompt := st.chat_input("How can I help you?"):
         st.session_state['citations'].append([])
         # Display user message in chat message container
         st.chat_message("user").markdown(prompt)

@@ -1,7 +1,6 @@
 import streamlit as st
 from pyvis.network import Network
 from blocks.calculations.research_papers.get_papers import get_papers_topics
-import random
 import numpy as np
 
 def get_network_graphs():
@@ -27,19 +26,32 @@ def get_network_graphs():
                 paper_title = paper.get('title', 'No Title')
                 net.add_node(paper_id, label=paper_title, title=paper_title)
 
-            # Add random edges
+            # Add manual edges
             paper_ids = [paper['paperId'] for paper in papers]
-            for paper in papers:
-                paper_id = paper['paperId']
-                num_connections = int(np.random.normal(loc=3, scale=3))  # Normal distribution with mean=10, std=5
-                num_connections = max(1, min(num_connections, 10))  # Ensure the number of connections is between 1 and 20
-                targets = random.sample(paper_ids, num_connections)
-                for target_id in targets:
-                    if paper_id != target_id:  # Avoid self-loops
-                        net.add_edge(paper_id, target_id, color='lightblue')
+            
+            # Paper 0 has a node connecting it to papers 1-25
+            for target_id in paper_ids[1:25]:
+                net.add_edge(paper_ids[0], target_id, color='lightblue')
+            
+            # Paper 1 has a connection to papers 18-30
+            for target_id in paper_ids[18:33]:
+                net.add_edge(paper_ids[1], target_id, color='lightblue')
+
+            # Edges betwween cluster 0 and 1
+            net.add_edge(paper_ids[18], paper_ids[19], color='lightblue')
+            net.add_edge(paper_ids[18], paper_ids[20], color='lightblue')   
+            net.add_edge(paper_ids[21], paper_ids[22], color='lightblue')
+
+            # Papers 36, 37, 38 each have a connection to each other
+            net.add_edge(paper_ids[36], paper_ids[37], color='lightblue')
+            net.add_edge(paper_ids[36], paper_ids[38], color='lightblue')
+            net.add_edge(paper_ids[37], paper_ids[38], color='lightblue')
+
+            # Adjust physics settings to decrease edge pull strength
+            net.barnes_hut(gravity=-2500)
 
             # Generate the network HTML directly
             network_html = net.generate_html()
 
             # Display the network in Streamlit using the HTML content
-            st.components.v1.html(network_html, height=800, width=800)
+            st.components.v1.html(network_html, height=700, width=750)

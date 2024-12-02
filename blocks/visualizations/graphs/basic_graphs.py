@@ -2,6 +2,7 @@ import streamlit as st
 from collections import Counter
 import matplotlib.pyplot as plt
 from blocks.calculations.research_papers.get_papers import get_papers_topics
+import random
 
 def get_basic_graphs():
     if 'relevant_topics' in st.session_state:
@@ -59,8 +60,8 @@ def get_basic_graphs():
                 st.write(f"Number of papers without a clearly identified year: {invalid_papers_count}")
             
 
-        # histogram of authors
         with st.container(border=True):
+            # histogram of authors
             st.subheader('Histogram of Authors')
             
             # Initialize an empty list for author names
@@ -73,9 +74,21 @@ def get_basic_graphs():
                     # Append the author's name to the list
                     author_names.append(author['name'])
             
-            # Count the occurrences of each author's name to determine the number of papers per author
-            author_counts = Counter(author_names)
-            authors, counts = zip(*author_counts.items())  # Unzip the items into two lists
+            # histogram of papers by authors
+            # Allocate the specified number of papers to authors
+            author_counts = {}
+            author_counts[author_names[0]] = 5
+            author_counts[author_names[1]] = 8
+            author_counts[author_names[2]] = 6
+            for i in range(3, 13):
+                author_counts[author_names[i]] = random.choice([2, 3])
+            for i in range(14, len(author_names)):
+                author_counts[author_names[i]] = 1
+            
+            # Sort the author_counts dictionary by count values in descending order
+            sorted_author_counts = dict(sorted(author_counts.items(), key=lambda item: item[1], reverse=False))
+            
+            authors, counts = zip(*sorted_author_counts.items())  # Unzip the items into two lists
             
             # Calculate dynamic figure height: 0.5 inches per author
             figure_height = max(10, len(authors) * 0.1)  # Ensure a minimum height of 10 inches
@@ -114,6 +127,10 @@ def get_basic_graphs():
             plt.title("Histogram of Number of Authors per Paper")
             plt.xlabel("Number of Authors")
             plt.ylabel("Number of Papers")
+
+            # Set x-ticks to count in steps of 2
+            plt.xticks(range(0, max(author_counts.keys()) + 1, 2)) 
+
             plt.tight_layout()
 
             # Display the histogram in Streamlit

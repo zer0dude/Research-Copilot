@@ -1,53 +1,40 @@
 import streamlit as st
 from blocks.calculations.research_papers.get_papers import get_papers_topics, bibtex_to_apa
+import json
+import os
+import time
+
+
+def save_papers_to_json(papers, filename='papers.json'):
+    with open(filename, 'w') as f:
+        json.dump(papers, f, indent=4)
+
+def load_papers_from_json(filename='papers.json'):
+    if os.path.exists(filename):
+        with open(filename, 'r') as f:
+            return json.load(f)
+    return None
 
 def get_papers_list():
-    # Hardcoded list of papers
-    papers = [
-        "Ferdinando Toscano, S. Zappalà (2021). Overall Job Performance, Remote Work Engagement, Living With Children, and Remote Work Productivity During the COVID-19 Pandemic. European Journal of Psychology Open, (), . [Available online](https://example.com)",
-        "Aidana Tleuken, Ali Turkyilmaz, Magzhan Sovetbek, S. Durdyev, Mert Guney, G. Tokazhanov, Lukasz Wiechetek, Z. Pastuszak, Anca Draghici, M. Boatca, Valerij Dermol, Nada Trunk, Serik Tokbolat, T. Dolidze, L. Yola, E. Avcu, J. Kim, F. Karaca (2022). Effects of the residential built environment on remote work productivity and satisfaction during COVID-19 lockdowns: An analysis of workers’ perceptions. Building and Environment, 219(), 109234 - 109234. [Available online](https://example.com)",
-        "Yuki Ban, Masanori Kuroha, S. Warisawa (2022). Sharing Work Appearance for Improvement in Remote Work Productivity. 2022 International Conference on Cyberworlds (CW), (), 94-101. [Available online](https://example.com)",
-        "Sarath Kumar. C, K. M (2024). Electrical Infrastructure and Remote Work Productivity after Post-Pandemic Productivity. [Available online](https://example.com)",
-        "Ruth Srininta Tarigan, Steryna Ownrysher Nyoto, Josephine Liemantoro (2024). HR strategies for sustaining remote-work productivity across generations. International Journal of Agile Systems and Management, (), . [Available online](https://example.com)",
-        "Arfan Arshad, Abid Ghaffar, Muhammad Usman Siddqiue, A. Rehman (2024). The Role of IT Infrastructure in Enabling Remote Work: Productivity and Employee Satisfaction. Journal of Excellence in Social Sciences, (), . [Available online](https://example.com)",
-        "Lisa Baudot, K. Kelly (2020). A Survey of Perceptions of Remote Work and Work Productivity in the United States during the COVID-19 Shutdown. Coronavirus & Infectious Disease Research eJournal, (), . [Available online](https://example.com)",
-        "Hiyam Abdulrahim, Ghadda Yousif (2023). Remote Work Implications on Productivity of Workers in the Saudi Financial Sector. International Journal of Professional Business Review, (), . [Available online](https://example.com)",
-        "Masayuki Morikawa (2023). Productivity dynamics of remote work during the COVID‐19 pandemic. Industrial Relations: A Journal of Economy and Society, (), . [Available online](https://example.com)",
-        "Douglas Chiguvi, Keneilwe Bakani (2023). Exploring the effects of remote work on employee productivity in Botswana amidst the COVID-19 Pandemic. International Journal of Research in Business and Social Science (2147- 4478), (), . [Available online](https://example.com)",
-        "M. McGrail, B. Nasir, A. B. Chater, B. Sangelaji, S. Kondalsamy-Chennakesavan (2023). The value of extended short-term medical training placements in smaller rural and remote locations on future work location: a cohort study. BMJ Open, 13(), . [Available online](https://example.com)",
-        "Zhong Du, Xiao-hu Cai, W. Bao, Huai Chen, H. Pan, Xue Wang, Qingxia Zhao, Wanze Zhu, Xingzhong Liu, Yong Jiang, Maihe Li (2016). Short-Term vs. Long-Term Effects of Understory Removal on Nitrogen and Mobile Carbohydrates in Overstory Trees. Forests, 7(), 67. [Available online](https://example.com)",
-        "Gustavo J. Bobonis, R. Castro (2010). The Role of Conditional Cash Transfers in Reducing Spousal Abuse in Mexico: Short-Term vs. Long-Term Effects *. [Available online](https://example.com)",
-        "Inès Tran, A. Gellner (2023). Long-term effects of chronic stress models in adult mice. Journal of Neural Transmission, 130(), 1133 - 1151. [Available online](https://example.com)",
-        "K. Kvitne, Ida Robertsen, E. Skovlund, H. Christensen, Veronica Krogstad, C. Wegler, Philip Carlo Angeles, Birgit M. Wollmann, Kristine Hole, L. K. Johnson, R. Sandbu, P. Artursson, C. Karlsson, S. Andersson, T. Andersson, J. Hjelmesæth, R. Jansson-Löfmark, A. Åsberg (2021). Short‐ and long‐term effects of body weight loss following calorie restriction and gastric bypass on CYP3A‐activity – a non‐randomized three‐armed controlled trial. Clinical and Translational Science, 15(), 221 - 233. [Available online](https://example.com)",
-        "R. Foerch, G. Kill, M. Walzak (1993). Plasma surface modification of polyethylene: short-term vs. long-term plasma treatment. Journal of Adhesion Science and Technology, 7(), 1077-1089. [Available online](https://example.com)",
-        "Bin Hao, Xuan Xu, Fei Wu, Lei Tan (2022). Long-Term Effects of Fire Severity and Climatic Factors on Post-Forest-Fire Vegetation Recovery. Forests, (), . [Available online](https://example.com)",
-        "S. Bode, Sebastian Friedrich, Christine Straub (2022). ‘We just did it as a team’: Learning and working on a paediatric interprofessional training ward improves interprofessional competencies in the short- and in the long-term. Medical Teacher, 45(), 264 - 271. [Available online](https://example.com)",
-        "David J. Prezant, M. Karwa, B. Richner, D. Maggiore, E. Gentry, V. Chung, J. Cahill (1998). Short Term vs Long Term Dexamethasone Treatment: Effects on Rat Diaphragm Structure and Function. Lung, 176(), 267-280. [Available online](https://example.com)",
-        "Hooz A. Mendivelso, J. Camarero, E. Gutiérrez, P. Zuidema (2014). Time-dependent effects of climate and drought on tree growth in a Neotropical dry forest: Short-term tolerance vs. long-term sensitivity. Agricultural and Forest Meteorology, 188(), 13-23. [Available online](https://example.com)",
-        "Antoine Lévy, Jacob Moscona (2022). Specializing in Cities: Density and the Pattern of Trade. SSRN Electronic Journal, (), . [Available online](https://example.com)",
-        "M. Shirmohammadi, Wee Chan Au, Mina Beigi (2022). Remote work and work-life balance: Lessons learned from the covid-19 pandemic and suggestions for HRD practitioners. Human Resource Development International, 25(), 163 - 181. [Available online](https://example.com)",
-        "Shailaja Pandurang Chikate (2024). Comparative Analysis of Work-Life Balance in Traditional Employment vs. Gig Economy under Remote Work Conditions in Latur City. International Journal For Multidisciplinary Research, (), . [Available online](https://example.com)",
-        "Ü. Ilhan (2021). A Rapid Implementation of Remote Work as a Strategy in Response to COVID-19: An Examination in Terms of Work-Life Balance. [Available online](https://example.com)",
-        "Melvin S. Rañeses, Noor Un Nisa, Edgar Suliva Bacason, Salvacion Martir (2022). Investigating the Impact of Remote Working on Employee Productivity and Work-life Balance: A Study on the Business Consultancy Industry in Dubai, UAE. International Journal of Business and Administrative Studies, (), . [Available online](https://example.com)",
-        "Alan Felstead, G. Henseke (2017). Assessing the Growth of Remote Working and its Consequences for Effort, Well‐Being and Work‐Life Balance. ORG: Other Change Management & Organizational Behavior (Topic), (), . [Available online](https://example.com)",
-        "T. Razumova, A. Aleshina, Maria A. Serpikhova (2020). Work-life Balance Under Conditions of Changes in the Quality of Working Life. [Available online](https://example.com)",
-        "L. Vyas (2022). “New normal” at work in a post-COVID world: work–life balance and labor markets. Policy and Society, (), . [Available online](https://example.com)",
-        "O. Kravchuk, I. Varis, Anna Khodakivska (2023). WORK-LIFE BALANCE PROGRAMS IN THE ORGANIZATION. Pryazovskyi Economic Herald, (), . [Available online](https://example.com)",
-        "Juan Sandoval-Reyes, Sandra Idrovo-Carlier, E. J. Duque-Oliva (2021). Remote Work, Work Stress, and Work–Life during Pandemic Times: A Latin America Situation. International Journal of Environmental Research and Public Health, 18(), . [Available online](https://example.com)",
-        "S. Neidlinger, J. Felfe, Katharina Schübbe (2022). Should I Stay or Should I Go (to the Office)?—Effects of Working from Home, Autonomy, and Core Self–Evaluations on Leader Health and Work–Life Balance. International Journal of Environmental Research and Public Health, 20(), . [Available online](https://example.com)",
-        "Nozar Shokrollahi (2023). Employee Engagement in the Era of Remote Work: Strategies for Innovation and Productivity. International Journal of Innovation Management and Organizational Behavior, (), . [Available online](https://example.com)",
-        "Kenneth E. Christopher (2021). Organizational Strategies for Building Community Among Remote Adjunct Faculty. [Available online](https://example.com)",
-        "S. Geldart (2022). Remote Work in a Changing World: A Nod to Personal Space, Self-Regulation and Other Health and Wellness Strategies. International Journal of Environmental Research and Public Health, 19(), . [Available online](https://example.com)",
-        "(2023). THE IMPACT OF REMOTE WORK ON HR PRACTICES: NAVIGATING CHALLENGES, EMBRACING OPPORTUNITIES. European Journal of Human Resource Management Studies, (), . [Available online](https://example.com)",
-        "Shamsul Huq Bin Shahriar, M. S. Alam, S. Arafat, Md. Mahfuzur Rahman Khan, J. Nur, Syful Islam Khan (2022). Remote Work and Changes in Organizational HR Practices During Corona Pandemic: A Study from Bangladesh. Vision: The Journal of Business Perspective, (), . [Available online](https://example.com)",
-        "Riris Ambarwati, Bernadetha Nadeak, Hady Sofyan, Abdul Rosid, Isep Amas Priatna (2024). Adapting HR Practices for Remote Work: Lessons from the Post-Pandemic Era, Case Study at Uniska MAB Banjarmasin. International Journal of Economics (IJEC), (), . [Available online](https://example.com)",
-        "Etienne Cardoso Abdala, Gabriel Morais, D. Rebelatto (2021). Remuneration strategies related to Charles Handy s cultural typology: a case study in a small digital market business in remote work. Brazilian Journal of Operations & Production Management, (), . [Available online](https://example.com)",
-        "K. Y. Zalmunin (2021). Psychosocial, clinical, and organizational perspectives of the risks of remote work for employees` mental health. Neurology Bulletin, (), . [Available online](https://example.com)",
-        "Adindu Donatus, Adindu Donatus Ogbu, Williams Ozowe, Augusta Heavens Ikevuje (2024). Remote work in the oil and gas sector: An organizational culture perspective. GSC Advanced Research and Reviews, (), . [Available online](https://example.com)",
-        "H. Sims, Carmen Alvarez, K. Grant, Jessica Walczak, L. Cooper, C. Ibe (2022). Frontline healthcare workers experiences and challenges with in-person and remote work during the COVID-19 pandemic: A qualitative study. Frontiers in Public Health, 10(), . [Available online](https://example.com)"
-    ]
-    
-    with st.container(border=True):
-        st.subheader('Bibliography')
-        for paper in papers:
-            st.markdown(paper)
+    if 'relevant_topics' in st.session_state:
+        topics_relevant = st.session_state['relevant_topics'].split('\n')[:-1]
+
+        if 'papers' not in st.session_state:
+            papers = load_papers_from_json()
+            if not papers:
+                papers = get_papers_topics(topics_relevant)
+                st.session_state['papers'] = papers
+                # Save papers to JSON file
+                save_papers_to_json(papers)
+            else:
+                st.session_state['papers'] = papers
+        else:
+            papers = st.session_state['papers']
+
+        # Add a delay to mimic processing time
+        time.sleep(1)
+        
+        with st.container(border=True):
+            st.subheader('Bibliography')
+            for paper in papers:
+                st.markdown(bibtex_to_apa(paper['citationStyles']['bibtex'], url=paper['url']))
